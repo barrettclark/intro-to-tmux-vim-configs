@@ -29,6 +29,13 @@ Plug 'tomtom/tcomment_vim'      " comment lines with <Leader>__ (and other cool 
 Plug 'tpope/vim-endwise'        " end structures automatically
 Plug 'https://github.com/tpope/vim-dispatch.git'  " run commands in vim asynch
 
+" Color scheme for vim
+Plug 'junegunn/seoul256.vim'
+
+" Powerline, but it's Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Git utilities
 Plug 'airblade/vim-gitgutter'   " show git status in the gutter
 Plug 'tpope/vim-fugitive'       " vim Git wrapper
@@ -41,3 +48,14 @@ call plug#end()
 
 " Show commits for every source line
 nnoremap <Leader>gb :Git blame<CR>
+
+" Color scheme settings
+let g:seoul256_background = 234
+colorscheme seoul256
+
+" Vim Airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='simple'
+let g:airline#extensions#bufferline#enabled = 0
