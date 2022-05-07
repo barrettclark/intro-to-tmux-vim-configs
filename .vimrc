@@ -44,6 +44,13 @@ Plug 'tpope/vim-fugitive'       " vim Git wrapper
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+
+Plug 'preservim/nerdtree' |
+      \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+      \ Plug 'ryanoasis/vim-devicons' |
+      \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
+      \ Plug 'unkiwii/vim-nerdtree-sync' |
+      \ Plug 'tyok/nerdtree-ack'
 call plug#end()
 
 " Show commits for every source line
@@ -59,3 +66,24 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 let g:airline#extensions#bufferline#enabled = 0
+
+" NERDTree config
+nnoremap <C-n> :NERDTree<CR>
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+
+" close the last buffer (file)
+nnoremap <leader>c :bp\|bd #<CR>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDSpaceDelims = 1
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeHighlightCursorline = 1
+let g:NERDTreeShowHidden = 1
+let g:airline_powerline_fonts = 1
+let g:nerdtree_sync_cursorline = 1
