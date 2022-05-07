@@ -1,0 +1,12 @@
+windows:
+  - layout: main-vertical
+    focus: 'true'
+    options:
+      main-pane-width: 55%
+      automatic-rename: 'off'
+    shell_command_before:
+      - cd ~/Projects
+    panes:
+      - focus: true
+      - blank
+      - blank
